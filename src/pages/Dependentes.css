@@ -1,0 +1,421 @@
+.dependentes-container {
+    padding: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+}
+
+.header-text h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.header-text p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.btn-add {
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 14px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.3);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.btn-add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 20px -3px rgba(14, 165, 233, 0.4);
+}
+
+.dependentes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-auto-rows: 1fr;
+    /* Garante que todos os cards na mesma linha tenham a mesma altura */
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.dependente-card {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 28px;
+    padding: 1.5rem 2rem 2rem 2rem;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.dependente-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.status-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.status-badge.ativo {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-badge.aguardando-aprovação {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    margin-top: 2.5rem;
+    /* Space below the badge */
+}
+
+.card-avatar {
+    width: 56px;
+    height: 56px;
+    background: var(--background);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.75rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--surface-border);
+}
+
+.card-name {
+    min-width: 0;
+    flex: 1;
+}
+
+.card-name h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.25rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3;
+}
+
+.card-parentesco {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+
+.card-body {
+    width: 100%;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row .label {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+}
+
+.info-row .value {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-align: right;
+}
+
+
+.card-footer {
+    width: 100%;
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn-details {
+    flex: 1;
+    background: var(--background);
+    border: 1px solid var(--surface-border);
+    padding: 0.75rem;
+    border-radius: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+}
+
+.btn-details:hover {
+    background: var(--surface);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn-edit {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background);
+    border: 1px solid var(--surface-border);
+    border-radius: 12px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-edit:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    background: rgba(14, 165, 233, 0.05);
+}
+
+.add-card-placeholder {
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px dashed var(--surface-border);
+    border-radius: 28px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 2.25rem;
+}
+
+.add-card-placeholder:hover {
+    border-color: var(--primary);
+    background: rgba(14, 165, 233, 0.05);
+}
+
+.plus-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--surface);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    border: 1px solid var(--surface-border);
+}
+
+.add-card-placeholder p {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.quota-usage {
+    margin-top: 4rem;
+}
+
+.quota-usage h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.quota-card {
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: 24px;
+    border: 1px solid var(--surface-border);
+}
+
+.quota-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: var(--background);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary) 0%, #06b6d4 100%);
+    border-radius: 10px;
+}
+
+.quota-hint {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 1.5rem;
+}
+
+.modal-content {
+    background: var(--surface);
+    width: 100%;
+    max-width: 500px;
+    border-radius: 32px;
+    padding: 2.5rem;
+    border: 1px solid var(--surface-border);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.close-modal {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    background: var(--background);
+    border: 1px solid var(--surface-border);
+    color: var(--text-primary);
+    outline: none;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    gap: 1rem;
+}
+
+.btn-submit {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    padding: 1rem;
+    border-radius: 14px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.2s;
+}
+
+.btn-submit:hover {
+    background: #0284c7;
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .dependentes-container {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,106 @@
+/* Refinamentos para o Cadastro para manter a elegância com mais campos */
+
+.login-page .login-container {
+    padding: 2.5rem 4rem;
+    /* Reduzindo levemente o padding vertical para caber tudo sem scroll excessivo */
+}
+
+.login-form {
+    gap: 1.25rem;
+    /* Espaçamento mais compacto entre campos */
+}
+
+.form-group {
+    gap: 0.4rem;
+}
+
+.form-group input {
+    padding: 0.85rem 1rem;
+    /* Inputs levemente mais compactos */
+}
+
+@media (max-width: 968px) {
+    .login-page .login-container {
+        padding: 3rem 2rem;
+    }
+}
+
+/* Success Modal Styles - Premium Feel */
+.success-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 15, 28, 0.85);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.4s ease;
+}
+
+.success-modal {
+    background: var(--surface);
+    border: 1px solid var(--surface-border);
+    border-radius: 32px;
+    padding: 3.5rem 2.5rem;
+    width: 90%;
+    max-width: 440px;
+    text-align: center;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+    animation: modalSlideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.success-icon-container {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary) 0%, #06b6d4 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 20px 40px rgba(14, 165, 233, 0.3);
+}
+
+.success-icon {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.success-modal h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.success-modal p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(30px) scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

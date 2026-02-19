@@ -1,0 +1,40 @@
+#root {
+  width: 100%;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  /* Prevents overflow in flex items */
+}
+
+.page-container {
+  padding: calc(var(--header-height) + 2rem) 2rem 2rem;
+  flex: 1;
+}
+
+.dashboard-placeholder {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 3rem;
+  text-align: center;
+  background: var(--surface);
+  border-radius: 20px;
+  border: 1px solid var(--surface-border);
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+}
