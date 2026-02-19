@@ -89,7 +89,7 @@ const LandingPage = () => {
                 </div>
                 <div className="nav-links">
                     <Link to="/login" className="btn-login-outline">Entrar</Link>
-                    <Link to="/register" className="btn-primary">Começar Agora</Link>
+                    {/* <Link to="/register" className="btn-primary">Começar Agora</Link> */}
                 </div>
             </nav>
 
